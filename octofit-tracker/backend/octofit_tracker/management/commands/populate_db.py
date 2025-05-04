@@ -33,4 +33,6 @@ class Command(BaseCommand):
         Workout.objects.create(name='Morning Yoga', description='A relaxing yoga session to start the day.')
         Workout.objects.create(name='HIIT', description='High-intensity interval training for advanced users.')
 
+        # Adding test data for users, teams, activities, leaderboard, and workouts
+
         self.stdout.write(self.style.SUCCESS('Database populated with test data.'))
