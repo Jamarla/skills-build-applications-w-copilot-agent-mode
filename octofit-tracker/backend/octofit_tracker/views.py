@@ -7,12 +7,13 @@ from django.urls import reverse
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    base_url = 'https://zany-sniffle-wjj5ppv6x9pcv5q7-8000.app.github.dev'
     return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'teams': reverse('team-list', request=request, format=format),
-        'activity': reverse('activity-list', request=request, format=format),
-        'leaderboard': reverse('leaderboard-list', request=request, format=format),
-        'workouts': reverse('workout-list', request=request, format=format),
+        'users': f'{base_url}/api/users/',
+        'teams': f'{base_url}/api/teams/',
+        'activity': f'{base_url}/api/activity/',
+        'leaderboard': f'{base_url}/api/leaderboard/',
+        'workouts': f'{base_url}/api/workouts/',
     })
 
 class UserViewSet(viewsets.ModelViewSet):
